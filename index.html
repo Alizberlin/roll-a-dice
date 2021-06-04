@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            color: azure;
+            background-image: linear-gradient(grey, rgb(49, 33, 33));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main {
+          background-color: gray;
+          text-align: center;
+          padding: 25px 30px;
+          border: white 2px solid;
+          border-radius: 5%;
+        }
+        img {
+            height: 150px;
+            width: 150px;
+            border-radius: 15%;
+            margin-top: 50px;
+        }
+
+h1 {
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin-bottom: 2rem;
+  color: #777;
+}
+#submit {
+  padding: 10px;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#submit:hover {
+  background-color: darkgoldenrod;
+  color: white;
+}
+
+    </style>
+
+
+    <title>Roll a Dice</title>
+    
+</head>
+<body>
+  <div class="main">
+    
+    <h2 style="color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Lets Roll a Dice</h2>
+    <h2 id="data">hello</h2>
+  <input type="submit" value="Roll-Again" data-wrapper-class="custom-btn" data-corners="false" id="submit"
+    onclick="refresh()"></div>
+  
+
+  <script>
+    var numbers = [
+      "One", "Two", "Three", "Four", "Five", "Six"
+    ];
+    var images = [
+      "<img src=side1.png>",
+      "<img src=side2.png>",
+      "<img src=side3.png>",
+      "<img src=side4.png>",
+      "<img src=side5.png>",
+      "<img src=side6.png>",
+    ];
+    var img1 = "<img src=side1.png>";
+    var img2 = "<img src=side2.png>";
+    var img3 = "<img src=side3.png>";
+    var img4 = "<img src=side4.png>";
+    var img5 = "<img src=side5.png>";
+    var img6 = "<img src=side6.png>";
+
+    var number = Math.floor(Math.random() * numbers.length);
+    //var image = Math.floor(Math.random()*images.length);
+    //console.log(images);
+
+    //document.write(images);
+    var num = numbers[number];
+    //var img = images[image];
+    var data = document.getElementById("data");
+    console.log(data);
+
+
+    //document.write("Your number is " + num + "<br>" + img);
+    if (num === "One") {
+      data.innerHTML = ("Your number is <strong>" + num + "</strong><br>" + img1);
+    }
+    else if (num === "Two") {
+      data.innerHTML = ("Your number is <strong>" + num + "</strong><br>" + img2);
+    }
+    else if (num === "Three") {
+      data.innerHTML = ("Your number is <strong>" + num + "</strong><br>" + img3);
+    }
+    else if (num === "Four") {
+      data.innerHTML = ("Your number is <strong>" + num + "</strong><br>" + img4);
+    }
+    else if (num === "Five") {
+      data.innerHTML = ("Your number is <strong>" + num + "</strong><br>" + img5);
+    }
+    else {
+      data.innerHTML = ("Your number is <strong>" + num + "</strong><br>" + img6);
+    }
+             // document.write('<a class="button" href="index.html">Roll Again</a>')
+
+
+
+             function refresh() {
+
+                setTimeout(function () {
+                  location.reload()
+                }, 100);
+              }
+
+  </script>
+</body>
+</html>
